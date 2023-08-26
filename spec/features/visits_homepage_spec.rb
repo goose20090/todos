@@ -1,5 +1,8 @@
 require 'rails_helper'
 
+
+# Smoke test
+
 feature 'User visits homepage' do
     scenario 'successfully' do
         visit root_path

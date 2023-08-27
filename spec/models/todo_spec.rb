@@ -20,3 +20,13 @@ describe Todo, '#complete!' do
     end
 end
 
+describe Todo, '#complete!' do
+    it 'sets completed_at to nil' do
+        todo = Todo.create!(completed_at: Time.current)
+        todo.mark_incomplete!
+        todo.reload
+        expect(todo).to_not be_completed
+    end
+end
+
+

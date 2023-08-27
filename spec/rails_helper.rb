@@ -5,6 +5,7 @@ require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+require_relative 'support/features/sign_in'
 require_relative 'support/factory_bot'
 require_relative 'support/chrome'
 require 'capybara/rspec'
@@ -58,6 +59,7 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://rspec.info/features/6-0/rspec-rails
   config.infer_spec_type_from_file_location!
+  config.include Features, type: :feature
 
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!

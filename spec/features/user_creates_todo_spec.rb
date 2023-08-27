@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 feature "User creates todo" do
-  scenario "fills in the form and submits" do
-    visit root_path
+  scenario "sucessfully" do
+    sign_in
     
     click_on 'Add a new todo'
     # Fill in the form fields
